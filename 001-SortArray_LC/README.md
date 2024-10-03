@@ -118,7 +118,7 @@ int main() {
 The `final` keyword is used to prevent further **inheritance** of a class or **overriding** of a virtual function in derived classes.
 
 - **Applied to a class**: No other class can derive from it.
-- **Applied to a virtual function**: No derived class can override that function.
+- **Applied to a virtual function**: No other derived class can override that function.
 
 **Example:**
 ```cpp
