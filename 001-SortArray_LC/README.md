@@ -1,5 +1,3 @@
-Certainly! Here's a well-organized explanation of C++ access specifiers and related keywords, structured for a README file:
-
 ---
 
 # C++ Access Specifiers and Related Keywords
