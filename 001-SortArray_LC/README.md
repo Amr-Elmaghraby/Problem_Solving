@@ -212,25 +212,9 @@ int main() {
 
 ## 11. **Explicit** (`explicit`)
 The `explicit` keyword prevents implicit conversions or constructor calls. It is typically used in single-argument constructors to avoid unintended type conversions.
-
-**Example:**
-```cpp
-class MyClass {
-public:
-    explicit MyClass(int x) {
-        std::cout << "Constructor called with " << x << std::endl;
-    }
-};
-
-int main() {
-    MyClass obj1(10); // OK
-    // MyClass obj2 = 20; // Error: explicit prevents implicit conversion
-}
-```
-
 The `explicit` keyword in C++ is used to prevent implicit conversions or copy-initializations that could inadvertently lead to bugs or unexpected behaviors. By marking a constructor `explicit`, it forces the programmer to provide arguments in the correct form, avoiding implicit type conversion when an object is created.
 
-Here are more examples demonstrating how `explicit` works and its usage in constructors.
+Here are some examples demonstrating how `explicit` works and its usage in constructors.
 
 ---
 
