@@ -19,7 +19,7 @@ public:
         for (int i = date.size() - 1; i >= -1; --i) {
             //0r When we reach the start of the string or encounter a dash ('-')
             //0r As a result of short-circuiting, date[-1] will not be evaluated.
-            //0o If, in other cases, you want both to be evaluated, you can use |: bitwise OR.
+            //0o If, in other cases, you want both to be evaluated, you can use bitwise OR " | ".
             if (i == -1 || date[i] == '-') {
                 unit = 0;  // Reset unit for the next number
                 // Convert the current number (tmp) to binary
