@@ -19,9 +19,14 @@ private:
 public:
     LinkedList() : size(0), head(nullptr) {}
 
-    Node<N> **get_head()
+    Node<N> **getHeader()
     {
         return &head;
+    }
+
+    void setHeader(Node<N>* head)
+    {
+        this->head = head;
     }
 
     void insertFront(N val)
