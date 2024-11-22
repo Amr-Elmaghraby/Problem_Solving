@@ -15,11 +15,19 @@ class LinkedList
 private:
     Node<N> *head;
     int size;
-
+    void setHeader(Node<N> *head)
+    {
+        this->head = head;
+    }
+    void setSize(int size)
+    {
+        this->size = size;
+    }
+    friend int main();
 public:
     LinkedList() : size(0), head(nullptr) {}
 
-    Node<N> **get_head()
+    Node<N> **getHeader()
     {
         return &head;
     }
@@ -102,8 +110,10 @@ public:
         return val;
     }
 
-    N peekFront(){
-        if(!head){
+    N peekFront()
+    {
+        if (!head)
+        {
             throw std::runtime_error("List is empty!!");
         }
         return head->data;
@@ -125,12 +135,15 @@ public:
         return val;
     }
 
-    N peekBack(){
-        if(!head){
+    N peekBack()
+    {
+        if (!head)
+        {
             throw std::runtime_error("List is empty!!");
         }
-        Node<N>* tmp = head;
-        while(tmp->next != nullptr){
+        Node<N> *tmp = head;
+        while (tmp->next != nullptr)
+        {
             tmp = tmp->next;
         }
         return tmp->data;
@@ -220,7 +233,7 @@ public:
     }
 };
 
-template<typename N>
+template <typename N>
 std::ostream &operator<<(std::ostream &os, LinkedList<N> &ll)
 {
     os << "[";
