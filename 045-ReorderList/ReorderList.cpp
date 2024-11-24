@@ -16,12 +16,12 @@ int main()
     std::cout << ll;
     std::cout << ll.getSize() << std::endl;
 
-    Node<int> **head = ll.get_head();
+    Node<int> **head = ll.getHeader();
 
     std::cout << ll;
 
 
-    //0r not best practice ReverseList2 is better
+    //0r not best practice RorderList2 is better
     
     Node<int> *next = (*head)->next;
     Node<int> *tmp = (*head);
