@@ -18,7 +18,7 @@ int main()
 
     std::cout << ll;
 
-    Node<int> **head = ll.get_head();
+    Node<int> **head = ll.getHeader();
 
     Node<int> *fast = *head;
     Node<int> *slow = *head;
