@@ -24,6 +24,7 @@ private:
         this->size = size;
     }
     friend int main();
+
 public:
     LinkedList() : size(0), head(nullptr) {}
 
@@ -227,13 +228,66 @@ public:
         }
     }
 
+    /**
+     * @brief Destroy the Linked List object
+     *  Destructor should handle cycled list using Floyd's algorithm to detect cycle if exists
+     */
     ~LinkedList()
     {
+        if (!head)
+        {
+            return;
+        }
+
+        // DETECT if a CYCLE EXISTS
+        Node<N> *fast = head;
+        Node<N> *slow = head;
+        Node<N> *prev = nullptr;
+        while (fast && fast->next)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+            if (slow == fast)
+            {
+                slow = head;
+                while (slow != fast)
+                {
+                    /**
+                     * Why use prev = fast?
+                     *If prev tracked slow's previous node, it might point to a node 
+                     * from the non-cyclic part of the list.
+                     *prev = fast ensures that prev points to the last node
+                     * in the cycle before the start of the cycle.
+                     */
+                    // prev should be fast prev not slow
+                    // as slow is returned to head while fast not
+                    // so if prev is slow prev it could be the node
+                    // pointing to the cycle begins nodes from
+                    // non-cyclic part while fast prev wouldn't
+                    prev = fast;
+                    slow = slow->next;
+                    fast = fast->next;
+                }
+                // RETURN with both fast and slow pointing to
+                //      the node where cycle begins
+                break;
+            }
+        }
+
+        // Detect if list is
+        // fast for even list size
+        // fast->next for odd list size
+        if (fast && fast->next)
+        {
+            // make node before cycle begin next pointer a nullptr
+            prev->next = nullptr;
+        }
+
+        // Deal with list as non-cyclic list even if it was cyclic
         while (head)
         {
-            Node<N> *tmp = head;
+            Node<int> *tmp = head;
             head = head->next;
-            --size;
             delete tmp;
         }
     }
