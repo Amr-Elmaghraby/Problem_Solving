@@ -1,6 +1,6 @@
 # House Robber Problem
 
-This repository contains the solution to the House Robber problem.
+This repository contains the solution to the House Robber problem. 
 
 ## Problem Description
 
