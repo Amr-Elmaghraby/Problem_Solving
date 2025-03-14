@@ -36,7 +36,7 @@ int main()
 {
     vector<int> nums = {0, 1, 0, 3, 12};
     Solution sol;
-    sol.movezeroes(nums);
+    sol.moveZeroes(nums);
     std::cout << nums;
     return 0;
 }
